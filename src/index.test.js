@@ -9,11 +9,11 @@ describe('First test', () =>{
 });
 
 describe('index.html', ()=>{
-  it('should say hello', (done) =>{ // async tests need done
+  it('should have h1 that says Users', (done) =>{ // async tests need done
     const index = fs.readFileSync('./src/index.html', 'utf-8')
     jsdom.env(index, function(err, win){
       const h1 = win.document.getElementsByTagName('h1')[0];
-      expect(h1.innerHTML).to.equal('Roll Tide');
+      expect(h1.innerHTML).to.equal('Users');
       done();
       win.close();
     });
